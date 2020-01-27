@@ -16,19 +16,27 @@ export const LoginForm = ({ onSubmit }: Props) => {
   const handleSubmit = (event: any) => {
     event.preventDefault();
     onSubmit({ username, password });
+    setPassword('');
+    selectInputContent('username');
   };
 
   return (
     <Form onSubmit={handleSubmit} autoComplete="off">
       <FormGroup>
-        <label htmlFor="#username">Username</label>
-        <FormInput id="#username" placeholder="Username" value={username} onChange={updateUsername} />
+        <label htmlFor="username">Username</label>
+        <FormInput id="username" placeholder="Username" value={username} onChange={updateUsername} />
       </FormGroup>
       <FormGroup>
-        <label htmlFor="#password">Password</label>
-        <FormInput type="password" id="#password" placeholder="Password" value={password} onChange={updatePassword} />
+        <label htmlFor="password">Password</label>
+        <FormInput type="password" id="password" placeholder="Password" value={password} onChange={updatePassword} />
       </FormGroup>
       <Button disabled={!username || !password}>Login</Button>
     </Form>
   );
+};
+
+const selectInputContent = (id: string): void => {
+  const usernameField: HTMLInputElement = document.getElementById(id) as HTMLInputElement;
+  usernameField?.focus();
+  usernameField?.select();
 };
