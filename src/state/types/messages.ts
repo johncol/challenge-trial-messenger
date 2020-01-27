@@ -1,5 +1,5 @@
 export interface MessagesState {
-  messages: Messages;
+  list: Messages;
   error?: string;
 }
 

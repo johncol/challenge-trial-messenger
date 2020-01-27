@@ -1,5 +1,5 @@
 export interface FriendsState {
-  friends: Friends;
+  list: Friends;
   error?: string;
 }
 

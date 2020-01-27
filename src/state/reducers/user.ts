@@ -4,13 +4,13 @@ import { UserState, User } from './../types/user';
 import { UserActionType } from './../actions/user';
 
 const initialState: UserState = {
-  user: { username: 'johncol' }
+  current: { username: 'johncol' }
 };
 
 export const userReducer = createReducer<UserState>(initialState, {
   [UserActionType.LOGIN_SUCCEEDED]: (_state: UserState, action: AnyAction) => {
-    const user: User = action.payload;
-    return { user };
+    const current: User = action.payload;
+    return { current };
   },
 
   [UserActionType.LOGIN_FAILED]: (_state: UserState, action: AnyAction) => {

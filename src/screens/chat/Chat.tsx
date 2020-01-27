@@ -21,18 +21,18 @@ export const Chat = () => {
   const { user, friends, messages }: RootState = useSelector(Selectors.root);
 
   useEffect(() => {
-    if (user.user && friends.friends.length === 0 && !friends.error) {
-      dispatch(FriendsAction.fetchFriends(user.user));
+    if (user.current && friends.list.length === 0 && !friends.error) {
+      dispatch(FriendsAction.fetchFriends(user.current));
     }
   });
 
   useEffect(() => {
-    if (user.user && friends.friends.length > 0 && messages.messages.length === 0 && !messages.error) {
-      dispatch(MessagesAction.fetchMessages(user.user, friends.friends[0]));
+    if (user.current && friends.list.length > 0 && messages.list.length === 0 && !messages.error) {
+      dispatch(MessagesAction.fetchMessages(user.current, friends.list[0]));
     }
   });
 
-  if (!user.user) {
+  if (!user.current) {
     return <Redirect to={Routes.LOGIN} />;
   }
 
@@ -42,19 +42,15 @@ export const Chat = () => {
     <Container className="chat-screen">
       <Row>
         <Col>
-          <Header onLogout={logout} user={user.user} />
+          <Header onLogout={logout} user={user.current} />
         </Col>
       </Row>
       <Row>
         <Col sm="12" md="4">
-          <FriendsList list={friends.friends} />
+          <FriendsList list={friends.list} />
         </Col>
         <Col sm="12" md="8">
-          <MessagesHistory
-            visibleIf={friends.friends.length > 0}
-            friend={friends.friends[0]}
-            messages={messages.messages}
-          />
+          <MessagesHistory visibleIf={friends.list.length > 0} friend={friends.list[0]} messages={messages.list} />
         </Col>
       </Row>
     </Container>

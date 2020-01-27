@@ -14,9 +14,9 @@ import './login.scss';
 
 export const Login = () => {
   const dispatch = useDispatch();
-  const state: UserState = useSelector(Selectors.user);
+  const user: UserState = useSelector(Selectors.user);
 
-  if (state.user) {
+  if (user.current) {
     return <Redirect to={Routes.CHAT} />;
   }
 
@@ -30,7 +30,7 @@ export const Login = () => {
         <CardBody>
           <CardTitle>Trial Messenger</CardTitle>
           <CardSubtitle>Login to start..</CardSubtitle>
-          <LoginFailed error={state.error} />
+          <LoginFailed error={user.error} />
           <LoginForm onSubmit={login} />
         </CardBody>
       </Card>

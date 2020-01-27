@@ -4,19 +4,19 @@ import { MessagesState, Messages } from './../types/messages';
 import { MessagesActionType } from './../actions/messages';
 
 const initialState: MessagesState = {
-  messages: []
+  list: []
 };
 
 export const messagesReducer = createReducer<MessagesState>(initialState, {
   [MessagesActionType.FETCH_MESSAGES_SUCCEEDED]: (_state: MessagesState, action: AnyAction) => {
-    const messages: Messages = action.payload;
-    return { messages };
+    const list: Messages = action.payload;
+    return { list };
   },
 
   [MessagesActionType.FETCH_MESSAGES_FAILED]: (_state: MessagesState, action: AnyAction) => {
     const error: string = action.payload;
     return {
-      messages: [],
+      list: [],
       error
     };
   }

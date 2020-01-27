@@ -1,5 +1,5 @@
 export interface UserState {
-  user?: User;
+  current?: User;
   error?: string;
 }
 
