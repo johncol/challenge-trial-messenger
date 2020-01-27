@@ -1,22 +1,28 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Card, CardTitle, CardSubtitle, CardBody } from 'shards-react';
+import { Redirect } from 'react-router-dom';
+import { Card, CardTitle, CardSubtitle, CardBody, Alert } from 'shards-react';
 
-import { AppDispatch } from './../../../state/store';
+import { Routes } from './../../../constants/routes';
 import { UserAction } from './../../../state/actions/user';
-import { RootState } from './../../../state/reducers';
+import { UserState } from './../../../state/types/user';
+import { Selectors } from './../../../state/selectors';
 import { LoginForm } from './../../LoginForm';
 import { Credentials } from './../../../models/credentials';
 
 import './login.scss';
 
 export const Login = () => {
-  const dispath: AppDispatch = useDispatch();
-  const state: Partial<RootState> = useSelector((state: RootState) => {
-    return state;
-  });
+  const dispath = useDispatch();
+  const state: UserState = useSelector(Selectors.user);
 
-  console.log('State:', state);
+  if (state.user) {
+    return <Redirect to={Routes.CHAT} />;
+  }
+
+  const login = (credentials: Credentials) => {
+    dispath(UserAction.login(credentials));
+  };
 
   return (
     <div className="login-screen">
@@ -24,13 +30,18 @@ export const Login = () => {
         <CardBody>
           <CardTitle>Trial Messenger</CardTitle>
           <CardSubtitle>Login to start..</CardSubtitle>
-          <LoginForm
-            onSubmit={({ username }: Credentials) => {
-              dispath(UserAction.login({ username }));
-            }}
-          />
+          <LoginFailed error={state.error} />
+          <LoginForm onSubmit={login} />
         </CardBody>
       </Card>
     </div>
   );
+};
+
+const LoginFailed = ({ error }: Partial<UserState>) => {
+  if (!error) {
+    return null;
+  }
+
+  return <Alert theme="light">{error}</Alert>;
 };

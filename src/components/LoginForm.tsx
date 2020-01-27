@@ -28,7 +28,7 @@ export const LoginForm = ({ onSubmit }: Props) => {
         <label htmlFor="#password">Password</label>
         <FormInput type="password" id="#password" placeholder="Password" value={password} onChange={updatePassword} />
       </FormGroup>
-      <Button>Login</Button>
+      <Button disabled={!username || !password}>Login</Button>
     </Form>
   );
 };
