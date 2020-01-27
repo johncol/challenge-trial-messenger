@@ -13,6 +13,14 @@ In the project directory, you can run:
 
 ### `yarn start`
 
+Runs react application at port 3000 and `json-server` at port 3001.
+
+### `yarn start:json-server`
+
+Runs `json-server` at port 3001.
+
+### `yarn start:react-app`
+
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
