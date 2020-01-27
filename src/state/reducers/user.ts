@@ -8,7 +8,7 @@ const initialState: UserState = {
 };
 
 export const userReducer = createReducer<UserState>(initialState, {
-  [UserActionType.LOGIN_SUCCESSFUL]: (_state: UserState, action: AnyAction) => {
+  [UserActionType.LOGIN_SUCCEEDED]: (_state: UserState, action: AnyAction) => {
     const user: User = action.payload;
     return { user };
   },

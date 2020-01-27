@@ -39,6 +39,103 @@
     }
   ],
   "messages": [
-    { "id": "1", "date": 1580074897224, "user": "alessandra_ambrosio", "to": "johncol", "text": "How are you doing?" }
+    {
+      "id": "1",
+      "timestamp": 1580074891124,
+      "user": "alessandra_ambrosio",
+      "to": "johncol",
+      "text": "Hello"
+    },
+    {
+      "id": "2",
+      "timestamp": 1580074891224,
+      "user": "johncol",
+      "to": "alessandra_ambrosio",
+      "text": "Goeie dag"
+    },
+    {
+      "id": "3",
+      "timestamp": 1580074891324,
+      "user": "alessandra_ambrosio",
+      "to": "johncol",
+      "text": "Tungjatjeta"
+    },
+    {
+      "id": "4",
+      "timestamp": 1580074892424,
+      "user": "johncol",
+      "to": "alessandra_ambrosio",
+      "text": "Ahlan bik"
+    },
+    {
+      "id": "5",
+      "timestamp": 158007486124,
+      "user": "alessandra_ambrosio",
+      "to": "johncol",
+      "text": "Nomoskar"
+    },
+    {
+      "id": "6",
+      "timestamp": 1580074899224,
+      "user": "johncol",
+      "to": "alessandra_ambrosio",
+      "text": "Selam"
+    },
+    {
+      "id": "7",
+      "timestamp": 158007333224,
+      "user": "alessandra_ambrosio",
+      "to": "johncol",
+      "text": "Mingala ba"
+    },
+    {
+      "id": "8",
+      "timestamp": 1580074891224,
+      "user": "johncol",
+      "to": "alessandra_ambrosio",
+      "text": "Nín hao"
+    },
+    {
+      "id": "9",
+      "timestamp": 1580077777224,
+      "user": "alessandra_ambrosio",
+      "to": "johncol",
+      "text": "Zdravo"
+    },
+    {
+      "id": "10",
+      "timestamp": 1580090001224,
+      "user": "johncol",
+      "to": "alessandra_ambrosio",
+      "text": "Nazdar"
+    },
+    {
+      "id": "11",
+      "timestamp": 1580071234224,
+      "user": "alessandra_ambrosio",
+      "to": "johncol",
+      "text": "Hallo"
+    },
+    {
+      "id": "12",
+      "timestamp": 1580087654224,
+      "user": "johncol",
+      "to": "alessandra_ambrosio",
+      "text": "Bonjour"
+    },
+    {
+      "id": "13",
+      "timestamp": 1580077777724,
+      "user": "alessandra_ambrosio",
+      "to": "johncol",
+      "text": "Guten Tag"
+    },
+    {
+      "id": "14",
+      "timestamp": 1580074491224,
+      "user": "johncol",
+      "to": "alessandra_ambrosio",
+      "text": "Hai"
+    }
   ]
 }

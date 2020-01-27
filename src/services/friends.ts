@@ -4,8 +4,8 @@ import { Friend, Friends } from './../state/types/friends';
 import { RemoteFriend } from './../models/remote/remote_friend';
 
 const fetchFriends = async (user: User): Promise<Friend[]> => {
-  const friendList1: Promise<Friends> = fetchRecordsUsingParam('user1', user.username);
-  const friendList2: Promise<Friends> = fetchRecordsUsingParam('user2', user.username);
+  const friendList1: Promise<Friends> = fetchByUserParam('user1', user.username);
+  const friendList2: Promise<Friends> = fetchByUserParam('user2', user.username);
   const friendsLists: Friends[] = await Promise.all([friendList1, friendList2]);
 
   const friends: Friends = [...friendsLists[0], ...friendsLists[1]];
@@ -13,11 +13,7 @@ const fetchFriends = async (user: User): Promise<Friend[]> => {
   return friends.sort(byLatestInteraction);
 };
 
-const byLatestInteraction = (friend1: Friend, friend2: Friend) => {
-  return friend1.latestInteraction - friend2.latestInteraction;
-};
-
-const fetchRecordsUsingParam = async (param: 'user1' | 'user2', username: string): Promise<Friends> => {
+const fetchByUserParam = async (param: 'user1' | 'user2', username: string): Promise<Friends> => {
   const url: URL = new URL(`${Api.HOST}/friends`);
   url.searchParams.append(param, username);
 
@@ -32,6 +28,10 @@ const fetchRecordsUsingParam = async (param: 'user1' | 'user2', username: string
     username: remote[param === 'user1' ? 'user2' : 'user1'],
     latestInteraction: remote.latestInteraction
   }));
+};
+
+const byLatestInteraction = (friend1: Friend, friend2: Friend): number => {
+  return friend1.latestInteraction - friend2.latestInteraction;
 };
 
 export const friends = {
