@@ -3,17 +3,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Card, CardTitle, CardSubtitle, CardBody, Alert } from 'shards-react';
 
-import { Routes } from './../../../constants/routes';
-import { UserAction } from './../../../state/actions/user';
-import { UserState } from './../../../state/types/user';
-import { Selectors } from './../../../state/selectors';
-import { LoginForm } from './../../LoginForm';
-import { Credentials } from './../../../models/credentials';
+import { Routes } from './../../constants/routes';
+import { UserAction } from './../../state/actions/user';
+import { UserState } from './../../state/types/user';
+import { Selectors } from './../../state/selectors';
+import { LoginForm } from './../../components/LoginForm';
+import { Credentials } from './../../models/credentials';
 
 import './login.scss';
 
 export const Login = () => {
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
   const state: UserState = useSelector(Selectors.user);
 
   if (state.user) {
@@ -21,7 +21,7 @@ export const Login = () => {
   }
 
   const login = (credentials: Credentials) => {
-    dispath(UserAction.login(credentials));
+    dispatch(UserAction.login(credentials));
   };
 
   return (

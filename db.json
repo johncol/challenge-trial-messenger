@@ -1,15 +1,41 @@
 {
   "users": [
-    { "id": "johncol", "registrationDate": 1580074897224, "password": "password" },
-    { "id": "alessandra_ambrosio", "registrationDate": 1580074897224, "password": "password" }
+    { "id": "johncol", "registrationDate": 1580070097224, "password": "password" },
+    { "id": "alessandra_ambrosio", "registrationDate": 1580070097224, "password": "password" },
+    { "id": "reese_floyd", "registrationDate": 1580070097224, "password": "password" },
+    { "id": "uzma_terry", "registrationDate": 1580070097224, "password": "password" },
+    { "id": "lina_richards", "registrationDate": 1580070097224, "password": "password" },
+    { "id": "jermaine_chapman", "registrationDate": 1580070097224, "password": "password" },
+    { "id": "judith_guzman", "registrationDate": 1580070097224, "password": "password" }
   ],
   "friends": [
     {
       "id": "1",
       "user1": "johncol",
       "user2": "alessandra_ambrosio",
-      "friendshipDate": 1580074897224,
-      "latestInteraction": 1580074897224
+      "friendshipDate": 1580071097224,
+      "latestInteraction": 1580071197224
+    },
+    {
+      "id": "2",
+      "user1": "johncol",
+      "user2": "uzma_terry",
+      "friendshipDate": 1580071097224,
+      "latestInteraction": 1580071997224
+    },
+    {
+      "id": "3",
+      "user1": "johncol",
+      "user2": "judith_guzman",
+      "friendshipDate": 1580071097224,
+      "latestInteraction": 1580071297224
+    },
+    {
+      "id": "4",
+      "user1": "jermaine_chapman",
+      "user2": "johncol",
+      "friendshipDate": 1580071097224,
+      "latestInteraction": 1580071397224
     }
   ],
   "messages": [

@@ -3,7 +3,9 @@ import { createReducer, AnyAction } from '@reduxjs/toolkit';
 import { UserState, User } from './../types/user';
 import { UserActionType } from './../actions/user';
 
-const initialState: UserState = {}; //{ username: 'johncol' };
+const initialState: UserState = {
+  user: { username: 'johncol' }
+};
 
 export const userReducer = createReducer<UserState>(initialState, {
   [UserActionType.LOGIN_SUCCESSFUL]: (_state: UserState, action: AnyAction) => {
