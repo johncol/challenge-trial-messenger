@@ -1,0 +1,18 @@
+{
+  "users": [
+    { "id": "johncol", "registrationDate": 1580074897224, "password": "password" },
+    { "id": "alessandra_ambrosio", "registrationDate": 1580074897224, "password": "password" }
+  ],
+  "friends": [
+    {
+      "id": "1",
+      "user1": "johncol",
+      "user2": "alessandra_ambrosio",
+      "friendshipDate": 1580074897224,
+      "latestInteraction": 1580074897224
+    }
+  ],
+  "messages": [
+    { "id": "1", "date": 1580074897224, "user": "alessandra_ambrosio", "to": "johncol", "text": "How are you doing?" }
+  ]
+}
