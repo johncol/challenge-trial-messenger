@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const MessagesHistory = ({ visibleIf, friend, messages, onAddMessage }: Props) => {
-  useEffect(scrollToBottomOfChat);
+  useEffect(scrollToBottomOfChat, [messages.length]);
 
   if (!visibleIf) {
     return null;

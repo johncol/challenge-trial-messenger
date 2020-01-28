@@ -1,14 +1,40 @@
 .friends-list {
-  .list-group-item {
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
+  .list-group {
+    display: none;
 
-    &:hover {
-      color: var(--primary);
+    @media (min-width: 768px) {
+      display: initial;
+    }
+
+    .list-group-item {
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
+    .list-group-item + .list-group-item {
+      border-top-width: 1px;
     }
   }
 
-  .list-group-item + .list-group-item {
-    border-top-width: 1px;
+  .dropdown {
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    .dropdown-menu.show,
+    button {
+      width: 100%;
+    }
+  }
+
+  .item {
+    &--current-friend {
+      font-weight: 500;
+      color: var(--primary);
+    }
   }
 }

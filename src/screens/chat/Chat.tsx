@@ -67,10 +67,10 @@ export const Chat = () => {
         </Col>
       </Row>
       <Row>
-        <Col sm="12" md="3">
-          <FriendsList list={friends.list} onFriendClick={setCurrentFriend} />
+        <Col sm="12" md="4" lg="3">
+          <FriendsList list={friends.list} onFriendClick={setCurrentFriend} currentFriend={currentFriend} />
         </Col>
-        <Col sm="12" md="9">
+        <Col sm="12" md="8" lg="9">
           <MessagesHistory
             visibleIf={!!currentFriend}
             friend={currentFriend}
