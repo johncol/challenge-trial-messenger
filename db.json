@@ -3,37 +3,44 @@
     {
       "id": "johncol",
       "registrationDate": 1580070097224,
-      "password": "password"
+      "password": "password",
+      "avatar": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads02&accessoriesType=Prescription01&hairColor=Auburn&facialHairType=MoustacheFancy&facialHairColor=Blonde&clotheType=ShirtCrewNeck&clotheColor=Gray01&eyeType=Close&eyebrowType=RaisedExcitedNatural&mouthType=Smile&skinColor=Black"
     },
     {
       "id": "alessandra_ambrosio",
       "registrationDate": 1580070097224,
-      "password": "password"
+      "password": "password",
+      "avatar": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairMiaWallace&accessoriesType=Prescription01&hatColor=Black&hairColor=BrownDark&facialHairType=Blank&facialHairColor=Auburn&clotheType=ShirtVNeck&clotheColor=Blue01&eyeType=Cry&eyebrowType=UpDownNatural&mouthType=Tongue&skinColor=Tanned"
     },
     {
       "id": "reese_floyd",
       "registrationDate": 1580070097224,
-      "password": "password"
+      "password": "password",
+      "avatar": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Kurt&hatColor=Gray02&hairColor=BrownDark&facialHairType=MoustacheMagnum&facialHairColor=Auburn&clotheType=Overall&clotheColor=PastelYellow&eyeType=Happy&eyebrowType=Angry&mouthType=Default&skinColor=Brown"
     },
     {
       "id": "uzma_terry",
       "registrationDate": 1580070097224,
-      "password": "password"
+      "password": "password",
+      "avatar": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurly&accessoriesType=Prescription01&hairColor=BrownDark&facialHairType=Blank&facialHairColor=Brown&clotheType=GraphicShirt&clotheColor=PastelGreen&graphicType=Bat&eyeType=Squint&eyebrowType=RaisedExcited&mouthType=Disbelief&skinColor=Tanneds"
     },
     {
       "id": "lina_richards",
       "registrationDate": 1580070097224,
-      "password": "password"
+      "password": "password",
+      "avatar": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairMiaWallace&accessoriesType=Kurt&hairColor=Black&facialHairType=Blank&facialHairColor=BlondeGolden&clotheType=Overall&clotheColor=Blue02&eyeType=Happy&eyebrowType=RaisedExcitedNatural&mouthType=Default&skinColor=Yellow"
     },
     {
       "id": "jermaine_chapman",
       "registrationDate": 1580070097224,
-      "password": "password"
+      "password": "password",
+      "avatar": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurvy&accessoriesType=Prescription02&hatColor=Black&hairColor=Black&facialHairType=Blank&facialHairColor=Black&clotheType=GraphicShirt&clotheColor=PastelYellow&graphicType=Skull&eyeType=Side&eyebrowType=Angry&mouthType=Twinkle&skinColor=Light"
     },
     {
       "id": "judith_guzman",
       "registrationDate": 1580070097224,
-      "password": "password"
+      "password": "password",
+      "avatar": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairFroBand&accessoriesType=Prescription01&hatColor=Black&hairColor=BrownDark&facialHairType=Blank&facialHairColor=Red&clotheType=Hoodie&clotheColor=PastelBlue&eyeType=Default&eyebrowType=SadConcerned&mouthType=Tongue&skinColor=Tanned"
     }
   ],
   "friends": [

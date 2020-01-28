@@ -1,5 +1,6 @@
 import { Api } from './../constants/api';
 import { Credentials } from './../models/credentials';
+import { RemoteUser } from './../models/remote/remote_user';
 import { User } from './../state/types/user';
 
 const login = async (credentials: Credentials): Promise<User | null> => {
@@ -12,9 +13,12 @@ const login = async (credentials: Credentials): Promise<User | null> => {
     throw new Error('Http error');
   }
 
-  const data: { id: string }[] = await response.json();
+  const data: RemoteUser[] = await response.json();
+  if (data.length === 0) {
+    return null;
+  }
 
-  return data.length > 0 ? { username: data[0].id } : null;
+  return { username: data[0].id, avatar: data[0].avatar };
 };
 
 export const authentication = {

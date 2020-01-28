@@ -1,5 +1,15 @@
 .header {
   .navbar {
     justify-content: space-between;
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 35px;
+        margin-left: 10px;
+      }
+    }
   }
 }

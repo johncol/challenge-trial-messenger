@@ -5,4 +5,5 @@ export interface UserState {
 
 export interface User {
   username: string;
+  avatar: string;
 }

@@ -4,7 +4,7 @@ import { UserState, User } from './../types/user';
 import { UserActionType } from './../actions/user';
 
 const initialState: UserState = {
-  current: { username: 'johncol' }
+  current: undefined
 };
 
 export const userReducer = createReducer<UserState>(initialState, {

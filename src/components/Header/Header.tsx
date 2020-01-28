@@ -19,7 +19,10 @@ export const Header = ({ onLogout, user }: Props) => {
         <Nav navbar>
           <NavItem>
             <NavLink href="#" onClick={onLogout}>
-              Logout <strong>{user.username}</strong>
+              <span>
+                Logout <strong>{user.username}</strong>
+              </span>
+              <img src={user.avatar} alt="Avatar" />
             </NavLink>
           </NavItem>
         </Nav>
