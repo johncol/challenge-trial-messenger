@@ -27,11 +27,35 @@ const fetchTwoWaysMessages = async (username1: string, username2: string): Promi
   return messages.sort(byTimestamp);
 };
 
+const addNewMessage = async (from: string, to: string, text: string): Promise<Message> => {
+  const url: URL = new URL(`${Api.HOST}/messages`);
+
+  const response: Response = await fetch(url.toString(), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      timestamp: Date.now(),
+      user: from,
+      to,
+      text
+    })
+  });
+
+  if (response.status !== 201) {
+    throw new Error('Http error');
+  }
+
+  const message: Message = await response.json();
+
+  return message;
+};
+
 const byTimestamp = (message1: Message, message2: Message): number => {
   return message1.timestamp - message2.timestamp;
 };
 
 export const messages = {
   fetchOneWayMessages,
-  fetchTwoWaysMessages
+  fetchTwoWaysMessages,
+  addNew: addNewMessage
 };

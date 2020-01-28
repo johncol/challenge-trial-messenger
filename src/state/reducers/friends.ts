@@ -2,6 +2,7 @@ import { createReducer, AnyAction } from '@reduxjs/toolkit';
 
 import { FriendsState, Friends } from './../types/friends';
 import { FriendsActionType } from './../actions/friends';
+import { UserActionType } from './../actions/user';
 
 const initialState: FriendsState = {
   list: []
@@ -18,6 +19,12 @@ export const friendsReducer = createReducer<FriendsState>(initialState, {
     return {
       list: [],
       error
+    };
+  },
+
+  [UserActionType.LOGOUT]: (_state: FriendsState, _action: AnyAction) => {
+    return {
+      list: []
     };
   }
 });

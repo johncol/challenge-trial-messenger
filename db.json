@@ -1,12 +1,40 @@
 {
   "users": [
-    { "id": "johncol", "registrationDate": 1580070097224, "password": "password" },
-    { "id": "alessandra_ambrosio", "registrationDate": 1580070097224, "password": "password" },
-    { "id": "reese_floyd", "registrationDate": 1580070097224, "password": "password" },
-    { "id": "uzma_terry", "registrationDate": 1580070097224, "password": "password" },
-    { "id": "lina_richards", "registrationDate": 1580070097224, "password": "password" },
-    { "id": "jermaine_chapman", "registrationDate": 1580070097224, "password": "password" },
-    { "id": "judith_guzman", "registrationDate": 1580070097224, "password": "password" }
+    {
+      "id": "johncol",
+      "registrationDate": 1580070097224,
+      "password": "password"
+    },
+    {
+      "id": "alessandra_ambrosio",
+      "registrationDate": 1580070097224,
+      "password": "password"
+    },
+    {
+      "id": "reese_floyd",
+      "registrationDate": 1580070097224,
+      "password": "password"
+    },
+    {
+      "id": "uzma_terry",
+      "registrationDate": 1580070097224,
+      "password": "password"
+    },
+    {
+      "id": "lina_richards",
+      "registrationDate": 1580070097224,
+      "password": "password"
+    },
+    {
+      "id": "jermaine_chapman",
+      "registrationDate": 1580070097224,
+      "password": "password"
+    },
+    {
+      "id": "judith_guzman",
+      "registrationDate": 1580070097224,
+      "password": "password"
+    }
   ],
   "friends": [
     {
@@ -136,6 +164,76 @@
       "user": "johncol",
       "to": "alessandra_ambrosio",
       "text": "Hai"
+    },
+    {
+      "timestamp": 1580074891224,
+      "user": "johncol",
+      "to": "jermaine_chapman",
+      "text": "Hola!",
+      "id": "rVQLVgE"
+    },
+    {
+      "timestamp": 1580074891224,
+      "user": "jermaine_chapman",
+      "to": "johncol",
+      "text": "-_-",
+      "id": "atQMc13"
+    },
+    {
+      "timestamp": 1580074891224,
+      "user": "jermaine_chapman",
+      "to": "johncol",
+      "text": "Who is this?",
+      "id": "1bP3cIx"
+    },
+    {
+      "timestamp": 1580074891224,
+      "user": "jermaine_chapman",
+      "to": "johncol",
+      "text": "What is this?",
+      "id": "hRHmJ6t"
+    },
+    {
+      "timestamp": 1580074891224,
+      "user": "jermaine_chapman",
+      "to": "johncol",
+      "text": "When is this?",
+      "id": "hbMJHOp"
+    },
+    {
+      "timestamp": 1580074891224,
+      "user": "jermaine_chapman",
+      "to": "johncol",
+      "text": "When is this?",
+      "id": "ZyvkOdz"
+    },
+    {
+      "timestamp": 1580179603879,
+      "user": "johncol",
+      "to": "alessandra_ambrosio",
+      "text": "Common!!",
+      "id": "TSkStyA"
+    },
+    {
+      "timestamp": 1580179613743,
+      "user": "johncol",
+      "to": "alessandra_ambrosio",
+      "text": "....",
+      "id": "3zRROUx"
+    },
+    {
+      "timestamp": 1580179622525,
+      "user": "johncol",
+      "to": "alessandra_ambrosio",
+      "text": "Getting quite tired of this...",
+      "id": "BAeSCNF"
+    },
+    {
+      "timestamp": 1580179948083,
+      "user": "johncol",
+      "to": "alessandra_ambrosio",
+      "text": "-_-",
+      "id": "_pl3jpv"
     }
   ]
 }

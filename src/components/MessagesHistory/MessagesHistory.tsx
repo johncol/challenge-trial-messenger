@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { Card, CardHeader, CardBody, CardFooter, Button, InputGroup, InputGroupAddon, FormInput } from 'shards-react';
+import { Card, CardHeader, CardBody, CardFooter } from 'shards-react';
 
 import { Friend } from './../../state/types/friends';
 import { Messages, Message } from './../../state/types/messages';
 import { ChatMessage } from './../ChatMessage';
+import { MessageInput } from './../MessageInput';
 
 import './messages_history.scss';
 
@@ -11,9 +12,10 @@ interface Props {
   visibleIf: boolean;
   friend: Friend;
   messages: Messages;
+  onAddMessage: (message: string) => void;
 }
 
-export const MessagesHistory = ({ visibleIf, friend, messages }: Props) => {
+export const MessagesHistory = ({ visibleIf, friend, messages, onAddMessage }: Props) => {
   useEffect(scrollToBottomOfChat);
 
   if (!visibleIf) {
@@ -32,12 +34,7 @@ export const MessagesHistory = ({ visibleIf, friend, messages }: Props) => {
         </CardHeader>
         <CardBody>{messages.map(toChatMessage)}</CardBody>
         <CardFooter>
-          <InputGroup>
-            <FormInput placeholder="Message.." />
-            <InputGroupAddon type="append">
-              <Button theme="primary">Send</Button>
-            </InputGroupAddon>
-          </InputGroup>
+          <MessageInput onSubmit={onAddMessage} friend={friend} />
         </CardFooter>
       </Card>
     </div>
