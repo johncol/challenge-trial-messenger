@@ -1,5 +1,5 @@
-import { Api } from './../constants/api';
-import { Messages, Message } from './../state/types/messages';
+import { Api } from './../constants';
+import { Messages, Message } from './../state/types';
 
 const fetchOneWayMessages = async (from: string, to: string): Promise<Messages> => {
   const url: URL = new URL(`${Api.HOST}/messages`);

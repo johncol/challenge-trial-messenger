@@ -1,7 +1,7 @@
-import { Api } from './../constants/api';
-import { Credentials } from './../models/credentials';
-import { RemoteUser } from './../models/remote/remote_user';
-import { User } from './../state/types/user';
+import { Api } from './../constants';
+import { RemoteUser } from './../models/remote';
+import { Credentials } from './../models';
+import { User } from './../state/types';
 
 const login = async (credentials: Credentials): Promise<User | null> => {
   const url: URL = new URL(`${Api.HOST}/users`);

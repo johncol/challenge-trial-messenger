@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'shards-react';
 
-import { User } from './../../state/types/user';
+import { User } from './../../state/types';
 
 import './header.scss';
 

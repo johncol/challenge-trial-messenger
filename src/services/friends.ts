@@ -1,7 +1,6 @@
-import { Api } from './../constants/api';
-import { User } from './../state/types/user';
-import { Friend, Friends } from './../state/types/friends';
-import { RemoteFriend } from './../models/remote/remote_friend';
+import { Api } from './../constants';
+import { RemoteFriend } from './../models/remote';
+import { User, Friend, Friends } from './../state/types';
 
 const fetchFriends = async (user: User): Promise<Friend[]> => {
   const friendList1: Promise<Friends> = fetchByUserParam('user1', user.username);

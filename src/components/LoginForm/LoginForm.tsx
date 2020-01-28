@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, FormInput, FormGroup, Button } from 'shards-react';
 
-import { Credentials } from './../../models/credentials';
+import { Credentials } from './../../models';
 
 interface Props {
   onSubmit: (credentials: Credentials) => void;

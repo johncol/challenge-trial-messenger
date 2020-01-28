@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Message } from './../../state/types/messages';
+import { Message } from './../../state/types';
 
 import './chat_message.scss';
 

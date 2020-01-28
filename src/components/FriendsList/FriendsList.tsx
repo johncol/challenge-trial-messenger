@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ListGroup, ListGroupItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'shards-react';
 
-import { Friends, Friend } from './../../state/types/friends';
+import { Friends, Friend } from './../../state/types';
 
 import './friends_list.scss';
 

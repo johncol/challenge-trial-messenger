@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, InputGroup, InputGroupAddon, FormInput, Form } from 'shards-react';
-import { Friend } from '../../state/types/friends';
+
+import { Friend } from './../../state/types';
 
 interface Props {
   onSubmit: (message: string) => void;

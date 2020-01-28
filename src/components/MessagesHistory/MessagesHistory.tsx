@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from 'shards-react';
 
-import { Friend } from './../../state/types/friends';
-import { Messages, Message } from './../../state/types/messages';
+import { Friend, Messages, Message } from './../../state/types';
 import { ChatMessage } from './../ChatMessage';
 import { MessageInput } from './../MessageInput';
 

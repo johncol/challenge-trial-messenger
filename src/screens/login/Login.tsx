@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Card, CardTitle, CardSubtitle, CardBody, Alert } from 'shards-react';
 
-import { Routes } from './../../constants/routes';
-import { UserAction } from './../../state/actions/user';
-import { UserState } from './../../state/types/user';
+import { Routes } from './../../constants';
+import { UserAction } from './../../state/actions';
+import { UserState } from './../../state/types';
 import { Selectors } from './../../state/selectors';
+import { Credentials } from './../../models';
 import { LoginForm } from './../../components/LoginForm';
-import { Credentials } from './../../models/credentials';
 
 import './login.scss';
 

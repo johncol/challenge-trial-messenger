@@ -4,12 +4,9 @@ import { Container, Row, Col } from 'shards-react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Selectors } from './../../state/selectors';
-import { UserAction } from './../../state/actions/user';
-import { FriendsAction } from './../../state/actions/friends';
-import { MessagesAction } from './../../state/actions/messages';
-import { Friend } from './../../state/types/friends';
-import { User } from './../../state/types/user';
-import { RootState } from './../../state/reducers';
+import { UserAction, FriendsAction, MessagesAction } from './../../state/actions';
+import { Friend, User } from './../../state/types';
+import { RootState } from './../../state/reducers/root';
 import { FriendsList } from './../../components/FriendsList';
 import { MessagesHistory } from './../../components/MessagesHistory';
 import { Header } from './../../components/Header';
