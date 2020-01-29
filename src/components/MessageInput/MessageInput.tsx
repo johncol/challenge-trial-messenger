@@ -9,23 +9,33 @@ interface Props {
 }
 
 export const MessageInput = ({ onSubmit, friend }: Props) => {
-  const [message, setMessage] = useState('');
-  const updateMessage = (event: any) => setMessage(event.target.value);
+  const [messageMap, setMessageMap] = useState(({} as any) as { [username: string]: string });
+
+  const updateMessage = (event: any) => {
+    const { value } = event.target;
+    setMessageMap(current => ({
+      ...current,
+      [friend.username]: value
+    }));
+  };
 
   useEffect(giveFocusToInput, [friend]);
 
   const handleSubmit = (event: any): void => {
     event.preventDefault();
-    if (message.trim().length > 0) {
-      onSubmit(message.trim());
-      setMessage('');
+    if (messageMap[friend.username].trim().length > 0) {
+      onSubmit(messageMap[friend.username].trim());
+      setMessageMap(current => ({
+        ...current,
+        [friend.username]: ''
+      }));
     }
   };
 
   return (
     <Form onSubmit={handleSubmit} className="message-input">
       <InputGroup>
-        <FormInput placeholder="Say hello.." value={message} onChange={updateMessage} />
+        <FormInput placeholder="Say hello.." value={messageMap[friend.username] || ''} onChange={updateMessage} />
         <InputGroupAddon type="append">
           <Button theme="primary">Send</Button>
         </InputGroupAddon>
