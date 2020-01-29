@@ -8,34 +8,41 @@ interface Props {
   friend: Friend;
 }
 
-export const MessageInput = ({ onSubmit, friend }: Props) => {
-  const [messageMap, setMessageMap] = useState(({} as any) as { [username: string]: string });
+type MessagesMap = { [username: string]: string };
 
-  const updateMessage = (event: any) => {
-    const { value } = event.target;
-    setMessageMap(current => ({
+export const MessageInput = ({ onSubmit, friend }: Props) => {
+  const [messagesMap, setMessagesMap] = useState(({} as any) as MessagesMap);
+
+  const messageForCurrentFriend = (): string => {
+    return messagesMap[friend.username] ?? '';
+  };
+
+  const setMessageForCurrentFriend = (message: string): void => {
+    setMessagesMap((current: MessagesMap) => ({
       ...current,
-      [friend.username]: value
+      [friend.username]: message
     }));
+  };
+
+  const updateMessage = (event: any): void => {
+    setMessageForCurrentFriend(event.target.value);
   };
 
   useEffect(giveFocusToInput, [friend]);
 
   const handleSubmit = (event: any): void => {
     event.preventDefault();
-    if (messageMap[friend.username].trim().length > 0) {
-      onSubmit(messageMap[friend.username].trim());
-      setMessageMap(current => ({
-        ...current,
-        [friend.username]: ''
-      }));
+    const message: string = messageForCurrentFriend().trim();
+    if (message.length > 0) {
+      onSubmit(message);
+      setMessageForCurrentFriend('');
     }
   };
 
   return (
     <Form onSubmit={handleSubmit} className="message-input">
       <InputGroup>
-        <FormInput placeholder="Say hello.." value={messageMap[friend.username] || ''} onChange={updateMessage} />
+        <FormInput placeholder="Say hello.." value={messageForCurrentFriend()} onChange={updateMessage} />
         <InputGroupAddon type="append">
           <Button theme="primary">Send</Button>
         </InputGroupAddon>
@@ -44,7 +51,7 @@ export const MessageInput = ({ onSubmit, friend }: Props) => {
   );
 };
 
-const giveFocusToInput = () => {
+const giveFocusToInput = (): void => {
   const input: HTMLInputElement = document.querySelector('.message-input .form-control') as HTMLInputElement;
   input.focus();
 };
