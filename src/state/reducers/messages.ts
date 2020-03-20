@@ -44,9 +44,9 @@ export const messagesReducer = createReducer<MessagesState>(initialState, {
   },
 
   [MessagesActionType.DELETE_MESSAGE_SUCCEEDED]: (state: MessagesState, action: AnyAction) => {
-    const id: string = action.payload;
+    const messageToDelete: Message = action.payload;
     return {
-      list: state.list.filter((message: Message) => message.id !== id)
+      list: state.list.filter((message: Message) => message.id !== messageToDelete.id)
     };
   },
 
