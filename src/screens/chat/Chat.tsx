@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Selectors } from './../../state/selectors';
 import { UserAction, FriendsAction, MessagesAction } from './../../state/actions';
-import { Friend, User } from './../../state/types';
+import { Friend, User, Message } from './../../state/types';
 import { RootState } from './../../state/reducers/root';
 import { FriendsList } from './../../components/FriendsList';
 import { MessagesHistory } from './../../components/MessagesHistory';
@@ -56,6 +56,10 @@ export const Chat = () => {
     }
   };
 
+  const deleteMessage = (message: Message) => {
+    dispatch(MessagesAction.deleteMessage(message));
+  };
+
   return (
     <Container className="chat-screen">
       <Row>
@@ -73,6 +77,7 @@ export const Chat = () => {
             friend={currentFriend}
             messages={messages.list}
             onAddMessage={addMessage}
+            onDeleteMessage={deleteMessage}
           />
         </Col>
       </Row>

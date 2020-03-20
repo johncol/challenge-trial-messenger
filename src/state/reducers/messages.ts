@@ -43,6 +43,21 @@ export const messagesReducer = createReducer<MessagesState>(initialState, {
     };
   },
 
+  [MessagesActionType.DELETE_MESSAGE_SUCCEEDED]: (state: MessagesState, action: AnyAction) => {
+    const id: string = action.payload;
+    return {
+      list: state.list.filter((message: Message) => message.id !== id)
+    };
+  },
+
+  [MessagesActionType.DELETE_MESSAGE_FAILED]: (state: MessagesState, action: AnyAction) => {
+    const error: string = action.payload;
+    return {
+      ...state,
+      error
+    };
+  },
+
   [UserActionType.LOGOUT]: (_state: MessagesState, _action: AnyAction) => {
     return {
       list: []

@@ -12,9 +12,10 @@ interface Props {
   friend: Friend;
   messages: Messages;
   onAddMessage: (message: string) => void;
+  onDeleteMessage: (message: Message) => void;
 }
 
-export const MessagesHistory = ({ visibleIf, friend, messages, onAddMessage }: Props) => {
+export const MessagesHistory = ({ visibleIf, friend, messages, onAddMessage, onDeleteMessage }: Props) => {
   useEffect(scrollToBottomOfChat, [messages.length]);
 
   if (!visibleIf) {
@@ -22,7 +23,12 @@ export const MessagesHistory = ({ visibleIf, friend, messages, onAddMessage }: P
   }
 
   const toChatMessage = (message: Message) => (
-    <ChatMessage key={message.id} message={message} belongsToUser={message.to === friend.username} />
+    <ChatMessage
+      key={message.id}
+      message={message}
+      belongsToUser={message.to === friend.username}
+      onClick={() => onDeleteMessage(message)}
+    />
   );
 
   return (

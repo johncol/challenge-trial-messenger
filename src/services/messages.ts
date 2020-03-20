@@ -50,6 +50,18 @@ const addNewMessage = async (from: string, to: string, text: string): Promise<Me
   return message;
 };
 
+const deleteMessage = async (id: string): Promise<any> => {
+  const url: URL = new URL(`${Api.HOST}/messages/${id}`);
+
+  const response: Response = await fetch(url.toString(), {
+    method: 'DELETE'
+  });
+
+  if (response.status !== 200) {
+    throw new Error('Could not delete message');
+  }
+};
+
 const byTimestamp = (message1: Message, message2: Message): number => {
   return message1.timestamp - message2.timestamp;
 };
@@ -57,5 +69,6 @@ const byTimestamp = (message1: Message, message2: Message): number => {
 export const messages = {
   fetchOneWayMessages,
   fetchTwoWaysMessages,
-  addNew: addNewMessage
+  addNew: addNewMessage,
+  delete: deleteMessage
 };

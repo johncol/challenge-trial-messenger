@@ -11,7 +11,9 @@ export enum MessagesActionType {
   FETCH_MESSAGES_SUCCEEDED = 'FETCH_MESSAGES_SUCCEEDED',
   FETCH_MESSAGES_FAILED = 'FETCH_MESSAGES_FAILED',
   ADD_MESSAGE_SUCCEEDED = 'ADD_MESSAGE_SUCCEEDED',
-  ADD_MESSAGE_FAILED = 'ADD_MESSAGE_FAILED'
+  ADD_MESSAGE_FAILED = 'ADD_MESSAGE_FAILED',
+  DELETE_MESSAGE_SUCCEEDED = 'DELETE_MESSAGE_SUCCEEDED',
+  DELETE_MESSAGE_FAILED = 'DELETE_MESSAGE_FAILED'
 }
 
 const clearMessages = createAction<void, MessagesActionType>(MessagesActionType.CLEAR_MESSAGES);
@@ -19,6 +21,8 @@ const fetchMessagesSucceeded = createAction<Messages, MessagesActionType>(Messag
 const fetchMessagesFailed = createAction<string, MessagesActionType>(MessagesActionType.FETCH_MESSAGES_FAILED);
 const addMessageSucceeded = createAction<Message, MessagesActionType>(MessagesActionType.ADD_MESSAGE_SUCCEEDED);
 const addMessageFailed = createAction<string, MessagesActionType>(MessagesActionType.ADD_MESSAGE_FAILED);
+const deleteMessageSucceeded = createAction<Message, MessagesActionType>(MessagesActionType.DELETE_MESSAGE_SUCCEEDED);
+const deleteMessageFailed = createAction<string, MessagesActionType>(MessagesActionType.DELETE_MESSAGE_FAILED);
 
 const fetchMessages = (user: User, friend: Friend): AppThunk => {
   return async (dispatch: AppDispatch): Promise<void> => {
@@ -42,8 +46,20 @@ const addMessage = (from: string, to: string, text: string): AppThunk => {
   };
 };
 
+const deleteMessage = (message: Message): AppThunk => {
+  return async (dispatch: AppDispatch): Promise<void> => {
+    try {
+      await messages.delete(message.id);
+      dispatch(deleteMessageSucceeded(message));
+    } catch (error) {
+      dispatch(deleteMessageFailed(error.message));
+    }
+  };
+};
+
 export const MessagesAction = {
   clearMessages,
   fetchMessages,
-  addMessage
+  addMessage,
+  deleteMessage
 };
