@@ -27,7 +27,7 @@ export const MessagesHistory = ({ visibleIf, friend, messages, onAddMessage, onD
       key={message.id}
       message={message}
       belongsToUser={message.to === friend.username}
-      onClick={() => onDeleteMessage(message)}
+      onDelete={() => onDeleteMessage(message)}
     />
   );
 

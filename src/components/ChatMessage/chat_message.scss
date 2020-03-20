@@ -25,4 +25,14 @@
       background-color: var(--light);
     }
   }
+
+  .badge {
+    padding: 1px 2px;
+    position: relative;
+    right: -9px;
+    top: -12px;
+    border-color: transparent;
+    cursor: pointer;
+    color: inherit;
+  }
 }
